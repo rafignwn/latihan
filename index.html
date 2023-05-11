@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan program</title>
+  </head>
+  <body>
+    <h1>Selamat datang</h1>
+    <ul></ul>
+
+    <script>
+      const list = document.querySelector("ul");
+
+      function tambahItem(text, angka) {
+        const item = document.createElement("li");
+        item.textContent = text + angka;
+
+        list.appendChild(item);
+      }
+
+      const nama = "Denis ramadhan";
+
+      let x = 0;
+      while (x < 5) {
+        tambahItem(nama, x);
+        x++;
+      }
+
+      let n = 0;
+      while (n < 5) {
+        tambahItem("Rifki");
+        n++;
+      }
+
+      let s = 0;
+      while (s < 5) {
+        tambahItem("Bastian");
+        s++;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Halaman Login</h1>
+    <form action="">
+      <input id="username" placeholder="masukan username" type="text" />
+      <input id="password" placeholder="masukan password" type="password" />
+      <button onclick="handleLogin()" type="button">Submit</button>
+    </form>
+
+    <script>
+      function handleLogin() {
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+
+        // array 1 dimensi
+        const data = ["Merkurius", "Venus", "Bumi", "Mars", "Saturnus"];
+        // array 2 dimensi
+        const data2 = [
+          ["Bima Sakti", "Andromeda"],
+          ["Bumi", "Matahari"],
+          ["Merkurius", "Venus", "Mars"],
+        ];
+
+        if (
+          data
+            .map((item) => item.toLowerCase())
+            .includes(username.value.toLowerCase()) &&
+          password.value == "123"
+        ) {
+          window.location = "index.html";
+          window.localStorage.setItem(
+            "nama",
+            username.value.toLocalUpperCase()
+          );
+        } else {
+          alert("Username atau password salah");
+        }
+      }
+    </script>
+  </body>
+</html>

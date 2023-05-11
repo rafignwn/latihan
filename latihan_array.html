@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan array Javascript</title>
+  </head>
+  <body>
+    <script>
+      let data = [10, 9, 5, 3, 5, "negara"];
+      const panjang = data.length;
+
+      for (let i = 0; i < panjang; i++) {
+        console.log(data[i]);
+      }
+
+      // perulangan while
+      let j = 0;
+      while (j < panjang) {
+        console.log(data[j]);
+        j++;
+      }
+
+      // perulangan do-while
+      let k = 0;
+      do {
+        console.log(data[k]);
+        k++;
+      } while (k < panjang);
+
+      // decrement
+      let m = panjang - 1;
+      while (m >= 0) {
+        console.log(data[m]);
+        m--;
+      }
+    </script>
+  </body>
+</html>
