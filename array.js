@@ -20,3 +20,9 @@ do {
     console.log(data[i]);
     i++;
 } while (i < 5);
+
+for (let x = 10; x > 0; x--) {
+    if (x < 5) {
+        console.log(x);
+    }
+}

@@ -5,6 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+
+    <style>
+      body {
+        background-color: rgb(242, 237, 237);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      h1 {
+        color: brown;
+        font-size: 3rem;
+      }
+
+      form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        width: 20rem;
+      }
+      input {
+        all: unset;
+        background-color: aquamarine;
+        padding-inline: 1.5rem;
+        padding-block: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        width: 100%;
+        color: brown;
+        border-radius: 10px;
+      }
+      button {
+        all: unset;
+        display: block;
+        padding: 1rem 2rem;
+        background-color: brown;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        width: 80%;
+        text-align: center;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Halaman Login</h1>
@@ -19,21 +67,34 @@
         const username = document.getElementById("username");
         const password = document.getElementById("password");
 
-        // array 1 dimensi
-        const data = ["Merkurius", "Venus", "Bumi", "Mars", "Saturnus"];
-        // array 2 dimensi
-        const data2 = [
-          ["Bima Sakti", "Andromeda"],
-          ["Bumi", "Matahari"],
-          ["Merkurius", "Venus", "Mars"],
+        // data user
+        const data_user = [
+          {
+            nama: "Bima Sakti",
+            username: "bima",
+            password: "1234",
+          },
+          {
+            nama: "Ahmad dani",
+            username: "ahmad",
+            password: "ahmad123",
+          },
+          {
+            nama: "Al Haitan",
+            username: "haitan",
+            password: "haitan123",
+          },
         ];
 
-        if (
-          data
-            .map((item) => item.toLowerCase())
-            .includes(username.value.toLowerCase()) &&
-          password.value == "123"
-        ) {
+        function cekLogin(username, password) {
+          const hasil = data_user.find(
+            (item) => item.username == username && item.password == password
+          );
+
+          return hasil;
+        }
+
+        if (cekLogin(username.value, password.value)) {
           window.location = "index.html";
           window.localStorage.setItem(
             "nama",
